@@ -1,4 +1,14 @@
 window.onload = function () {
+  let modalWrap = $(".modal-wrap");
+  let modalCloseBtn = $(".modal-close-btn");
+  let headerDrawer = $(".header-drawer");
+  modalCloseBtn.click(function () {
+    modalWrap.removeClass("modal-active");
+  });
+  headerDrawer.click(function () {
+    modalWrap.addClass("modal-active");
+  });
+
   let swVisual = new Swiper(".sw-visual", {
     loop: true,
     autoplay: {
@@ -19,14 +29,18 @@ window.onload = function () {
       disableOnInteraction: false,
     },
     slidesPerView: 3,
-    spaceBetween: 30,
     pagination: {
-      el: ".swiper-pagination",
+      el: ".bsm-pagination",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
   let swiper = new Swiper(".sw-introduce", {
     loop: true,
     slidesPerView: 1,
+    spaceBetween: 100,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

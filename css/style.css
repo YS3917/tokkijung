@@ -52,6 +52,109 @@ body {
   max-width: 1500px;
   margin: 0 auto;
 }
+/* modal */
+
+.modal-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(51, 24, 19, 0.8);
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 99999;
+}
+
+.modal-active {
+  display: block;
+}
+
+.modal-wrap h2 {
+  position: relative;
+  display: block;
+  font-size: 0;
+}
+
+.modal-wrap h2 .modal-logo {
+  position: absolute;
+  top: 30px;
+  left: 202px;
+
+  display: inline-block;
+  color: #fff;
+  width: 200px;
+  height: 41px;
+  background: url("../images/logo.png") no-repeat center;
+  background-size: cover;
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 200px;
+  top: 30px;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.modal-close-btn::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 40px;
+  width: 3px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+.modal-close-btn::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 40px;
+  width: 3px;
+  background-color: #fff;
+  transform: rotate(-135deg);
+}
+
+.modal-menu {
+  position: absolute;
+  left: 26%;
+  top: 25%;
+  text-align: top;
+  width: 100%;
+}
+
+.modal-main-list {
+  position: relative;
+  display: block;
+}
+
+.modal-main-list > li {
+  position: relative;
+  display: inline-block;
+  margin-right: 40px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.modal-main-list > li > a {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.modal-sub-menu {
+}
+.modal-sub-menu li {
+}
+.modal-sub-menu li a {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 100;
+  color: #fff;
+  opacity: 0.6;
+}
 
 /* header */
 
@@ -60,9 +163,8 @@ header {
   width: 100%;
   height: 90px;
   overflow: hidden;
-  background-color: brown;
-  opacity: 0.6;
-  z-index: 99999;
+  background-color: rgba(51, 24, 19, 0.8);
+  z-index: 999;
   transition: height 1s;
 }
 
@@ -95,23 +197,28 @@ header {
 .depth1 > li > a {
   display: inline-block;
   line-height: 90px;
+  font-size: 18px;
   color: #fff;
 }
 
 .depth2 {
   padding-bottom: 40px;
 }
+
 .depth2 li {
   padding: 10px 0;
 }
+
 .depth2 li a {
   display: block;
   color: #fff;
   line-height: 25px;
 }
+
 .depth2 li a:hover {
-  color: orange;
+  color: #fc6131;
 }
+
 .header-right {
   display: inline-block;
 }
@@ -216,14 +323,45 @@ header {
   position: relative;
   text-align: center;
   background-color: #6d4f3b;
-  padding-top: 60px;
-  padding-bottom: 125px;
+  padding-top: 50px;
   padding-left: 80px;
   padding-right: 80px;
+  padding-bottom: 160px;
+}
+
+.sw-bestmenu {
+  /* overflow: visible; */
+  height: 640px;
+}
+
+.sw-bestmenu .swiper-wrapper .swiper-slide {
+  position: relative;
+  display: block;
+  /* height: 600px; */
+  /* width: 560px; */
+  /* margin-bottom: 140px; */
+  padding-left: 20px;
+}
+
+.sw-bestmenu-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(100% - 40px);
+  overflow: hidden;
+  background: blueviolet;
+}
+
+.sw-bestmenu-img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  width: 100%;
 }
 
 .bestmenu h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 34px;
   color: #fff;
   font-weight: 500;
@@ -233,59 +371,16 @@ header {
   font-size: 16px;
   line-height: 26px;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 55px;
+  margin-bottom: 40px;
   letter-spacing: -0.1px;
-}
-
-.sw-bestmenu .swiper-wrapper .swiper-slide {
-  position: relative;
-}
-
-/* .swiper-box{
-  width: 585px;
-  height: 640px;
-} */
-
-.ss-1 {
-  width: 762px;
-  height: 600px;
-  background: url("../images/cont_slide_bg01.jpg");
-  background-size: cover;
-}
-
-.ss-2 {
-  width: 762px;
-  height: 600px;
-  background: url("../images/cont_slide_bg02.jpg");
-  background-size: cover;
-}
-
-.ss-3 {
-  width: 762px;
-  height: 600px;
-  background: url("../images/cont_slide_bg03.jpg");
-  background-size: cover;
-}
-
-.ss-4 {
-  width: 762px;
-  height: 600px;
-  background: url("../images/cont_slide_bg04.jpg");
-  background-size: cover;
-}
-
-.ss-5 {
-  width: 762px;
-  height: 600px;
-  background: url("../images/cont_slide_bg05.jpg");
-  background-size: cover;
 }
 
 .txt-box {
   position: absolute;
+  display: block;
   background-color: #fff;
   bottom: 0;
-  left: -30px;
+  left: 0px;
   display: block;
   width: 480px;
   height: 225px;
@@ -316,6 +411,56 @@ header {
 }
 
 .bsm-pagination {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 70px;
+  width: 100%;
+  height: 4px;
+  z-index: 9999;
+}
+
+.bsm-pagination .swiper-pagination-bullet {
+  width: 65px;
+  height: 4px;
+  border-radius: 0;
+  background: #fff;
+  opacity: 1;
+  margin: 0 4px;
+}
+
+.bsm-pagination .swiper-pagination-bullet-active {
+  background-color: pink;
+}
+
+.bestmenu .swiper-button-next {
+  position: absolute;
+  top: 95%;
+  left: 65%;
+  display: block;
+  width: 11px;
+  height: 20px;
+  background: url("../images/slider_right.png") no-repeat center;
+  background-size: cover;
+}
+
+.bestmenu .swiper-button-next::after {
+  display: none;
+}
+
+.bestmenu .swiper-button-prev {
+  position: absolute;
+  top: 95%;
+  left: 34.5%;
+  display: block;
+  width: 11px;
+  height: 20px;
+  background: url("../images/slider_left.png") no-repeat center;
+  background-size: cover;
+}
+
+.bestmenu .swiper-button-prev::after {
+  display: none;
 }
 
 /* introduce */
@@ -417,7 +562,7 @@ header {
   background-size: cover;
 }
 
-.swiper-button-next {
+.sw-introduce .swiper-button-next {
   position: absolute;
   left: 712px;
   top: 738px;
@@ -431,11 +576,11 @@ header {
   border: 0;
 }
 
-.swiper-button-next::after {
+.sw-introduce .swiper-button-next::after {
   display: none;
 }
 
-.swiper-button-prev {
+.sw-introduce .swiper-button-prev {
   position: absolute;
   left: 593px;
   top: 738px;
@@ -448,7 +593,7 @@ header {
   border: 0;
 }
 
-.swiper-button-prev::after {
+.sw-introduce .swiper-button-prev::after {
   display: none;
 }
 
@@ -604,6 +749,7 @@ header {
   padding-top: 50px;
   font-size: 15px;
 }
+
 .footer-txt-box span {
   margin-right: 20px;
 }
